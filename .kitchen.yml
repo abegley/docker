@@ -1,0 +1,17 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos
+    driver:
+      image: centos
+      platform: rhel
+
+suites:
+  - name: default
+    run_list:
+    attributes:
