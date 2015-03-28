@@ -6,12 +6,13 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: centos
-    driver:
-      image: centos
-      platform: rhel
+  - name: centos-6.4
+    driver_config:
+      forward:
+      - 80:80
 
 suites:
   - name: default
     run_list:
+      - recipe[apache::default]
     attributes:
